@@ -44,11 +44,13 @@ export class AppComponent implements OnInit, OnDestroy {
       .then(result => {
         //TODO: check if the new address is visible under the current 
         //tab, if it is reload the tab
+        const patt = this.tabs[this.currentTab].pattern;
 
-        //check if the current address added it in the same tab
-
-        //if yes, reload
-
+        //find if address is in this pattern
+        this.addressSvc.findAddress(patt)
+        .then((addre:Address[])=>{
+          this.currentAddresses = addre;
+        })
 
         console.log("Saved: ", result);
       })
