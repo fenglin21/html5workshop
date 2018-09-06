@@ -1,0 +1,8 @@
+<h1>My Shopping Cart</h1>
+
+<app-inventory (newLineItem)="processLineItem($event)"></app-inventory>
+
+
+<div #ref *ngFor="let c of cart; let i = index">
+   {{i}} Name: {{ c.label }} - Quantity: {{ c.quantity }}  &nbsp; <button (click)="del(i)">Delete</button>
+</div>
