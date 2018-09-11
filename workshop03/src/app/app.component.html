@@ -1,0 +1,14 @@
+<h1>Star Wars</h1>
+
+{{ people | json }}
+
+<form #form="ngForm" (ngSubmit)="search()">
+
+  People ID:
+  <input type="number" name="peopleId" min="1" ngModel>
+
+  <button type="submit" [disabled]="form.invalid"> 
+    Search
+  </button>
+
+</form>
